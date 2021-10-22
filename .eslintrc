@@ -1,0 +1,65 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:import/typescript"
+  ],
+  "plugins": ["import", "@typescript-eslint", "eslint-plugin-jest"],
+  "rules": {
+    // https://eslint.org/docs/rules/
+    "no-fallthrough": "off", // https://github.com/ionic-team/eslint-config/issues/7
+    "no-constant-condition": "off",
+
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "warn",
+
+    "@typescript-eslint/ban-ts-comment": "off",
+
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
+    "@typescript-eslint/array-type": "warn",
+    "@typescript-eslint/consistent-type-assertions": "warn",
+    "@typescript-eslint/prefer-for-of": "warn",
+    "@typescript-eslint/prefer-optional-chain": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^h$" }],
+
+    // https://github.com/benmosher/eslint-plugin-import
+    "import/first": "warn",
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": { "order": "asc", "caseInsensitive": false },
+        "groups": ["external", "builtin", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before",
+            "newlines-between": "never"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "newlines-between": "always"
+      }
+    ],
+    "import/newline-after-import": "warn",
+    "import/no-duplicates": "warn",
+    "import/no-mutable-exports": "warn",
+    // NOTE: all the above is inherited from @ionic/eslint-config
+
+    "@typescript-eslint/consistent-type-imports": "off",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "warn",
+    "jest/no-identical-title": "warn",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "warn",
+    "@typescript-eslint/no-namespace": "off"
+  },
+  "env": {
+    "jest/globals": true
+  }
+}
