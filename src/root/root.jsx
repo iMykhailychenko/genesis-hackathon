@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Root = ({ test }) => {
-  // console.log(test);
+const Root = () => {
   return (
     <div>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eligendi error est fugiat iure maxime molestiae nobis
