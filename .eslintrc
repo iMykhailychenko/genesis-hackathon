@@ -1,33 +1,58 @@
 {
-  "parser": "@typescript-eslint/parser",
   "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "airbnb",
     "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:import/typescript"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended"
   ],
-  "plugins": ["import", "@typescript-eslint", "eslint-plugin-jest"],
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["import"],
   "rules": {
-    // https://eslint.org/docs/rules/
-    "no-fallthrough": "off", // https://github.com/ionic-team/eslint-config/issues/7
+    "no-fallthrough": "off",
     "no-constant-condition": "off",
+    "comma-dangle": ["warn", "never"],
+    "eol-last": "error",
+    "no-console": "off",
+    "no-duplicate-imports": "warn",
+    "no-unused-vars": "warn",
+    "object-curly-spacing": ["warn", "always"],
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "allowMultiline": true,
+        "children": { "when": "always" },
+        "spacing": { "objectLiterals": "always" },
+        "when": "always"
+      }
+    ],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/prop-types": "off",
+    "semi": "warn",
+    "sort-keys": [
+      "warn",
+      "asc",
+      {
+        "caseSensitive": true,
+        "minKeys": 2,
+        "natural": false
+      }
+    ],
 
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
-    "@typescript-eslint/no-this-alias": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "warn",
-
-    "@typescript-eslint/ban-ts-comment": "off",
-
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
-    "@typescript-eslint/array-type": "warn",
-    "@typescript-eslint/consistent-type-assertions": "warn",
-    "@typescript-eslint/prefer-for-of": "warn",
-    "@typescript-eslint/prefer-optional-chain": "warn",
-    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^h$" }],
-
-    // https://github.com/benmosher/eslint-plugin-import
     "import/first": "warn",
     "import/order": [
       "warn",
@@ -48,18 +73,11 @@
     ],
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
-    "import/no-mutable-exports": "warn",
-    // NOTE: all the above is inherited from @ionic/eslint-config
-
-    "@typescript-eslint/consistent-type-imports": "off",
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "warn",
-    "jest/no-identical-title": "warn",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "warn",
-    "@typescript-eslint/no-namespace": "off"
+    "import/no-mutable-exports": "warn"
   },
-  "env": {
-    "jest/globals": true
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
