@@ -1,0 +1,4 @@
+{
+  "*.{js,jsx,scss,css,json}": "yarn lint",
+  "*.{js,jsx}": "yarn prettier"
+}
