@@ -12,9 +12,7 @@ const RootLayout = ({ children }: Props): JSX.Element => {
     return (
         <>
             <Header />
-            <main>
-                <Box sx={{ flexGrow: 1 }}>{children}</Box>
-            </main>
+            <main>{children}</main>
             <Footer />
         </>
     );
