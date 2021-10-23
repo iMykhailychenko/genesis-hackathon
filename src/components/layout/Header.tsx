@@ -3,7 +3,7 @@ import React, { ReactElement, useState } from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Button, Avatar } from '@mui/material';
 
 export default function Header(): ReactElement {
-    const [language, setLanguage] = useState('UA');
+    const [language, setLanguage] = useState<string>('UA');
 
     const handleLanguage = (e: { target: { value: React.SetStateAction<string> } }) => {
         setLanguage(e.target.value);
