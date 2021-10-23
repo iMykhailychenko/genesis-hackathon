@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+
+import '../styles/styles.scss';
 
 import type { AppProps } from 'next/app';
 
@@ -9,12 +11,6 @@ interface IProps {
 }
 
 const MyApp = ({ Component, pageProps }: AppProps & IProps): JSX.Element => {
-    useEffect(() => {
-        const resize = (): void => document.body.style.setProperty('--100vh', window.innerHeight + 'px');
-        window.addEventListener('resize', resize);
-        return () => window.removeEventListener('resize', resize);
-    }, []);
-
     return (
         <RootProvider store={pageProps}>
             <Component {...pageProps} />
