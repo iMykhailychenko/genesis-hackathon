@@ -1,24 +1,18 @@
 import React from 'react';
 
-import Link from 'next/link';
+import { observer } from 'mobx-react-lite';
 
-const Home = (): JSX.Element => {
+import { useStore } from '../hooks/store.hook';
+
+const Home = observer((): JSX.Element => {
+    const store = useStore();
+
     return (
         <div>
             <h2>test for heroku</h2>
-            <div>
-                <Link href="home">
-                    <a>to home</a>
-                </Link>
-            </div>
-
-            <div>
-                <Link href="posts/234543245">
-                    <a>to post 234543245</a>
-                </Link>
-            </div>
+            <p>{JSON.stringify(store || {})}</p>
         </div>
     );
-};
+});
 
 export default Home;
