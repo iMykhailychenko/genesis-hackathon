@@ -1,4 +1,4 @@
-import { Pagination, LoadingState } from './../../../interfaces/services';
+import { Pagination, LoadingState } from '../../../interfaces';
 
 export interface IPost {
     title: string;

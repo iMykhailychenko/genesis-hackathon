@@ -1,12 +1,14 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
-export default function MainContent(): ReactElement {
+const Banner = (): JSX.Element => {
     return (
-        <main className="main_content">
+        <div className="main_content">
             <div className="content_banner">
                 <img className="banner_image" src="/images/banner.jpeg" alt="banner" />
                 <div className="banner_text">Lorem ipsum dolor</div>
             </div>
-        </main>
+        </div>
     );
-}
+};
+
+export default Banner;
