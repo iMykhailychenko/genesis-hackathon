@@ -20,7 +20,7 @@ export default function Header(): ReactElement {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <img src="images/heart.svg" alt="favourite" />
                 </IconButton>
-                <select className="language_select" value={language} onChange={handleLanguage}>
+                <select className="language_select" value={language} onBlur={handleLanguage}>
                     <option value="UA">UA</option>
                     <option value="RU">RU</option>
                 </select>

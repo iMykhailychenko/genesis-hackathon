@@ -1,16 +1,16 @@
 import React, { ReactElement } from 'react';
 
-import MediaProvider from './media/media';
+import { Store } from '../store/store';
+
+import StoreProvider from './store/store';
 
 interface IProps {
-    children: ReactElement[] | ReactElement;
-    serverProps: {
-        width: number;
-    };
+    store: Store;
+    children: JSX.Element;
 }
 
-const RootProvider = ({ serverProps, children }: IProps): ReactElement => (
-    <MediaProvider width={serverProps.width}>{children}</MediaProvider>
+const RootProvider = ({ store, children }: IProps): ReactElement => (
+    <StoreProvider initialState={store}>{children}</StoreProvider>
 );
 
 export default RootProvider;
