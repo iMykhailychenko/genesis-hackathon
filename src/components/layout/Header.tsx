@@ -1,33 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 
-import {
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-    Button,
-    Avatar,
-    MenuItem,
-    Select,
-    createTheme,
-    ThemeProvider,
-    BottomNavigation,
-} from '@mui/material';
-
-const theme = createTheme({
-    components: {
-        // Name of the component
-        MuiInputBase: {
-            styleOverrides: {
-                // Name of the slot
-                root: {
-                    // Some CSS
-                    border: 'none',
-                },
-            },
-        },
-    },
-});
+import { AppBar, Toolbar, IconButton, Typography, Button, Avatar } from '@mui/material';
 
 export default function Header(): ReactElement {
     const [language, setLanguage] = useState('UA');
@@ -42,7 +15,7 @@ export default function Header(): ReactElement {
                     <img src="images/icons_cafeteria.svg" alt="logo" />
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    TheCafeReview
+                    CafeReview
                 </Typography>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <img src="images/heart.svg" alt="favourite" />
