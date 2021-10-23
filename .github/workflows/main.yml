@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  js_lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Checkout actions
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run lint
+        run: npm run lint
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: the-cafe-review
+          heroku_email: igor.c.m@ukr.net
+	      env:
+          NODE_ENV: production
