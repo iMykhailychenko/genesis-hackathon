@@ -1,4 +1,3 @@
 {
-  "src/**/*.{js,jsx,scss,css,json}": "yarn lint",
-  "src/**/*.{js,jsx}": "yarn prettier"
+  "src/**/*.{js,jsx,scss,css,json}": "yarn prettier"
 }
