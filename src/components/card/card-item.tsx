@@ -23,7 +23,7 @@ const CardItem = (): JSX.Element => (
                 <Typography variant="body2">description</Typography>
                 <Box sx={{ display: 'flex', mt: 2, flexWrap: 'wrap' }}>
                     <RatingComponent value={0} />
-                    <ReviewsComponent value={0} />
+                    <ReviewsComponent />
                 </Box>
             </CardContent>
         </Box>
