@@ -1,13 +1,17 @@
-import React, { ReactElement, useState } from 'react';
+import React from 'react';
 
 import { AppBar, Toolbar, IconButton, Typography, Button, Avatar } from '@mui/material';
+import { useRouter } from 'next/router';
 
-export default function Header(): ReactElement {
-    const [language, setLanguage] = useState<string>('UA');
+import { LANGUAGE_ENUM } from '../../interfaces';
 
-    const handleLanguage = (e: { target: { value: React.SetStateAction<string> } }) => {
-        setLanguage(e.target.value);
+const Header = (): JSX.Element => {
+    const history = useRouter();
+
+    const handleLanguage = () => {
+        history.push(history.pathname, history.asPath, { locale: LANGUAGE_ENUM.UA as string, scroll: false });
     };
+
     return (
         <AppBar sx={{ background: '#7cb342' }} position="static">
             <Toolbar>
@@ -20,7 +24,7 @@ export default function Header(): ReactElement {
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <img src="images/heart.svg" alt="favourite" />
                 </IconButton>
-                <select className="language_select" value={language} onBlur={handleLanguage}>
+                <select className="language_select" value={LANGUAGE_ENUM.UA} onBlur={handleLanguage}>
                     <option value="UA">UA</option>
                     <option value="RU">RU</option>
                 </select>
@@ -30,4 +34,6 @@ export default function Header(): ReactElement {
             </Toolbar>
         </AppBar>
     );
-}
+};
+
+export default Header;

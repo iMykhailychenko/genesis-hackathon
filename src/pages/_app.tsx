@@ -4,6 +4,7 @@ import '../styles/styles.scss';
 
 import type { AppProps } from 'next/app';
 
+import Layout from '../components/layout/layout';
 import RootProvider from '../context/root-provider';
 
 interface IProps {
@@ -13,7 +14,9 @@ interface IProps {
 const MyApp = ({ Component, pageProps }: AppProps & IProps): JSX.Element => {
     return (
         <RootProvider store={pageProps}>
-            <Component {...pageProps} />
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </RootProvider>
     );
 };

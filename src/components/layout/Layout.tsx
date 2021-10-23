@@ -1,15 +1,20 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
-import Footer from './Footer';
-import Header from './Header';
-import MainContent from './main-content';
+import Footer from './footer';
+import Header from './header';
 
-export default function Layout(): ReactElement {
+interface Props {
+    children: JSX.Element;
+}
+
+const Layout = ({ children }: Props): JSX.Element => {
     return (
         <>
             <Header />
-            <MainContent />
+            {children}
             <Footer />
         </>
     );
-}
+};
+
+export default Layout;

@@ -1,11 +1,13 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
 import { Container } from '@mui/material';
 
-export default function Footer(): ReactElement {
+const Footer = (): JSX.Element => {
     return (
         <footer className="footer">
             <Container maxWidth="sm" />
         </footer>
     );
-}
+};
+
+export default Footer;
