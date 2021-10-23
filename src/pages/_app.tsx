@@ -4,6 +4,7 @@ import App from 'next/app';
 import type { AppProps } from 'next/app';
 import { AppContextType } from 'next/dist/next-server/lib/utils';
 import { Router } from 'next/router';
+import './styles.scss';
 
 import RootProvider from '../context/root-provider';
 
