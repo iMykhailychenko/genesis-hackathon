@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Layout from '../components/layout/Layout';
+import Banner from '../components/pages/home/banner';
 
 const Home = (): JSX.Element => {
-    return <Layout />;
+    return <Banner />;
 };
 
 export default Home;

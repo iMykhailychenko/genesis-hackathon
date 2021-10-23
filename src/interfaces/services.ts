@@ -11,3 +11,7 @@ export type Pagination<T> = {
     currentPage: number;
     data: T[];
 };
+
+export interface Params {
+    [key: string]: string | number | null;
+}

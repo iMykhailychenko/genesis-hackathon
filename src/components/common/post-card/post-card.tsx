@@ -6,10 +6,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-import RatingComponent from './rating';
-import ReviewsComponent from './reviews';
+import RatingComponent from './components/rating';
+import ReviewsComponent from './components/reviews';
 
-const CardItem = (): JSX.Element => (
+const PostCard = (): JSX.Element => (
     <Card sx={{ display: 'flex', borderRadius: '12px', mb: 3 }}>
         <CardMedia component="img" sx={{ width: 160 }} image="" alt="" />
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -30,4 +30,4 @@ const CardItem = (): JSX.Element => (
     </Card>
 );
 
-export default CardItem;
+export default PostCard;
