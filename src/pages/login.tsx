@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import TextField from '@mui/material/TextField';
+import Input from '@mui/material/Input';
 import Typography from '@mui/material/Typography';
 import { useFormik } from 'formik';
 import { GetServerSideProps } from 'next';
@@ -33,31 +33,32 @@ const LoginPage = (): JSX.Element => {
     });
 
     return (
-        <form className="login_form" onSubmit={formik.handleSubmit}>
-            <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
+        <form action="#" method="post" onSubmit={formik.handleSubmit}>
+            <Typography variant="h1" fontSize={28} fontWeight={'bold'}>
                 Log in
             </Typography>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Email
-                </FormLabel>
-                <TextField type="email" name="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
+            <FormControl>
+                <FormLabel htmlFor="email">Email</FormLabel>
+                <Input
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    id="email"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                />
             </FormControl>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Password
-                </FormLabel>
-                <TextField
+            <FormControl>
+                <FormLabel htmlFor="email">Password</FormLabel>
+                <Input
                     type="password"
-                    name="empasswordail"
+                    name="password"
                     id="password"
                     value={formik.values.password}
                     onChange={formik.handleChange}
                 />
             </FormControl>
-            <Button variant="contained" size="large" type={'submit'}>
-                Log In
-            </Button>
+            <Button type={'submit'}>Log In </Button>
         </form>
     );
 };

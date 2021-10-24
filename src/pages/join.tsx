@@ -1,12 +1,10 @@
-import React from 'react';
-
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useFormik } from 'formik';
 import { GetServerSideProps } from 'next';
@@ -49,39 +47,31 @@ const JoinPage = (): JSX.Element => {
 
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
-                Join
+            <Typography variant="h1" fontSize={28} fontWeight={'bold'}>
+                Log in
             </Typography>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="firstName">
-                    First name
-                </FormLabel>
-                <TextField name="firstName" id="firstName" value={formik.values.firstName} onChange={formik.handleChange} />
+            <FormControl>
+                <FormLabel htmlFor="firstName">First name</FormLabel>
+                <Input id="email" name="firstName" value={formik.values.firstName} onChange={formik.handleChange} />
             </FormControl>
-
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="lastName">
-                    Last name
-                </FormLabel>
-                <TextField name="lastName" id="lastName" value={formik.values.lastName} onChange={formik.handleChange} />
+            <FormControl>
+                <FormLabel htmlFor="lastName">Last name</FormLabel>
+                <Input id="email" name="lastName" value={formik.values.lastName} onChange={formik.handleChange} />
             </FormControl>
-
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+            <FormControl>
                 <FormLabel htmlFor="email">Email</FormLabel>
-                <TextField name="email" type="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
+                <Input type="email" name="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
             </FormControl>
-
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+            <FormControl>
                 <FormLabel htmlFor="password">Password</FormLabel>
-                <TextField
-                    name="password"
+                <Input
                     type="password"
+                    name="password"
                     id="password"
                     value={formik.values.password}
                     onChange={formik.handleChange}
                 />
             </FormControl>
-
             <FormControl fullWidth>
                 <InputLabel id="role">Роль на сайті</InputLabel>
                 <Select

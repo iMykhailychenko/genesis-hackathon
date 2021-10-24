@@ -68,7 +68,7 @@ const Header = (): JSX.Element => {
 
                 <ButtonGroup variant="contained">
                     <Button onClick={() => history.push('/login')}>Login</Button>
-                    <Button onClick={() => history.push('/registration')}>Join</Button>
+                    <Button onClick={() => history.push('/join')}>Join</Button>
                 </ButtonGroup>
             </Toolbar>
         </AppBar>
