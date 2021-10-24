@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react';
+import React, { useState } from 'react';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -17,7 +17,7 @@ import css from './filters.module.scss';
 const Filters = (): JSX.Element => {
     const [search, setSearch] = useState<string>();
     const [rating, setRating] = useState<number | null>(0);
-    const [price, setPrice] = useState<string>();
+    // const [price, setPrice] = useState<string>();
     const [place, setPlace] = useState<string>();
 
     const handleSearch = (e: { target: { value: string } }) => {
