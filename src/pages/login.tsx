@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 import { Typography, FormControl, Input, FormLabel, Button } from '@mui/material';
 
 import { useAuth } from '../context/auth/auth';
 
-const LoginPage: React.FC = () => {
-    const { login, register } = useAuth();
+const LoginPage = (): JSX.Element => {
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const handleLogin = async (e: any) => {
+
+    const handleLogin = (e: FormEvent): void => {
         e.preventDefault();
-        // Log in or Register here
         login(email, password);
-        // register(email, password)
     };
+
     return (
         <form onSubmit={handleLogin}>
             <Typography variant="h1" fontSize={28} fontWeight={'bold'}>

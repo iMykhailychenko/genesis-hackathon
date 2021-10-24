@@ -3,13 +3,16 @@ import React, { createContext } from 'react';
 import axios from 'axios';
 import cookie from 'cookie';
 import Cookies from 'js-cookie';
+import { GetServerSidePropsContext } from 'next';
 import router from 'next/router';
 
 import { IAuth } from '../../interfaces/auth';
 
 const AuthContext = createContext({});
 
-export const getUser = async (ctx: any) => {
+export const getUser = async (
+    ctx: GetServerSidePropsContext,
+): Promise<{ status: string; user: unknown } | { status: string; user: null }> => {
     const token = cookie.parse(ctx?.req?.headers?.cookie || '').accessToken || Cookies.get('accessToken');
 
     return await axios({
@@ -29,7 +32,12 @@ export const getUser = async (ctx: any) => {
         });
 };
 
-export const AuthProvider: React.FC<{ myAuth: IAuth; children: JSX.Element[] | JSX.Element }> = props => {
+interface Props {
+    myAuth: IAuth;
+    children: JSX.Element[] | JSX.Element;
+}
+
+export const AuthProvider = (props: Props): JSX.Element => {
     const auth = props.myAuth || { status: 'SIGNED_OUT', user: null };
     const login = async (email: string, password: string) => {
         return await axios

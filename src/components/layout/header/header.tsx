@@ -2,9 +2,9 @@ import React from 'react';
 
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import FormControl from '@mui/material/FormControl';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
@@ -15,7 +15,6 @@ import { useRouter } from 'next/router';
 import { LANGUAGE_ENUM } from '../../../interfaces';
 
 import css from './header.module.scss';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
 const Header = (): JSX.Element => {
     const history = useRouter();
