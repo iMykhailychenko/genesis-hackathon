@@ -1,9 +1,13 @@
 import React from 'react';
 
-import Banner from '../components/pages/home/banner';
+import CardList from '../components/common/card-list/card-list';
+
+import Layout from '../components/layout/root-layout/root-layout';
 
 const Home = (): JSX.Element => {
-    return <Banner />;
+    return (
+        <CardList />
+    );
 };
 
 export default Home;
