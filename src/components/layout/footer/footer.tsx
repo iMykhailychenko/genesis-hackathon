@@ -1,16 +1,17 @@
 import React from 'react';
 
 import { Container } from '@mui/material';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const Footer = (): JSX.Element => {
     return (
-        <footer className="footer">
-            <Container maxWidth="md">
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    <span>Made with love by Анигиляторная Пушка</span>
-                </Typography>
-            </Container>
+        <footer>
+            <Box bgcolor="primary.main" sx={{ height: 35 }}>
+                <Container maxWidth="md" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                    <Typography color="primary.contrastText">Made with love by Анигиляторная Пушка</Typography>
+                </Container>
+            </Box>
         </footer>
     );
 };
