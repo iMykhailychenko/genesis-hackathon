@@ -65,25 +65,25 @@ const Meta = ({ title, description, keywords = '', icon, h1 = '' }: IProps): Rea
                 <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="16x16" />
                 <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="32x32" />
                 <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="72x72" />
-                <link href="/meta/icons/icon-96.png" rel="icon" type="image/png" sizes="96x96" />
-                <link href="/meta/icons/icon-128.png" rel="icon" type="image/png" sizes="128x128" />
-                <link href="/meta/icons/icon-144.png" rel="icon" type="image/png" sizes="144x144" />
-                <link href="/meta/icons/icon-152.png" rel="icon" type="image/png" sizes="152x152" />
-                <link href="/meta/icons/icon-192.png" rel="icon" type="image/png" sizes="192x192" />
-                <link href="/meta/icons/icon-384.png" rel="icon" type="image/png" sizes="384x384" />
-                <link href="/meta/icons/icon-512.png" rel="icon" type="image/png" sizes="512x512" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="96x96" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="128x128" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="144x144" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="152x152" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="192x192" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="384x384" />
+                <link href="/meta/icons/icon-72.png" rel="icon" type="image/png" sizes="512x512" />
 
                 <link href="/meta/icons/mask-icon.png" rel="apple-touch-icon" />
                 <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="16x16" />
                 <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="32x32" />
                 <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="72x72" />
-                <link href="/meta/icons/icon-96.png" rel="apple-touch-icon" type="image/png" sizes="96x96" />
-                <link href="/meta/icons/icon-128.png" rel="apple-touch-icon" type="image/png" sizes="128x128" />
-                <link href="/meta/icons/icon-144.png" rel="apple-touch-icon" type="image/png" sizes="144x144" />
-                <link href="/meta/icons/icon-152.png" rel="apple-touch-icon" type="image/png" sizes="152x152" />
-                <link href="/meta/icons/icon-192.png" rel="apple-touch-icon" type="image/png" sizes="192x192" />
-                <link href="/meta/icons/icon-384.png" rel="apple-touch-icon" type="image/png" sizes="384x384" />
-                <link href="/meta/icons/icon-512.png" rel="apple-touch-icon" type="image/png" sizes="512x512" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="96x96" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="128x128" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="144x144" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="152x152" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="192x192" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="384x384" />
+                <link href="/meta/icons/icon-72.png" rel="apple-touch-icon" type="image/png" sizes="512x512" />
 
                 <link rel="mask-icon" href="/meta/icons/mask-icon.png" color={color} />
                 <link rel="canonical" href={url(history.locale)} />
