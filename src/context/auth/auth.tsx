@@ -4,6 +4,7 @@ import axios from 'axios';
 import cookie from 'cookie';
 import Cookies from 'js-cookie';
 import router from 'next/router';
+
 import { IAuth } from '../../interfaces/auth';
 
 const AuthContext = createContext({});
