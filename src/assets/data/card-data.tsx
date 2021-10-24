@@ -1,3 +1,4 @@
+
 const CARD_DATA = [{
     id: 1,
     image: '/images/cafe.jpg',
@@ -28,5 +29,6 @@ const CARD_DATA = [{
     type: 'Ресторан',
     description: 'Высокая кухня для настоящих гурманов'
 }]
+
 
 export default CARD_DATA;

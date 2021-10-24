@@ -1,11 +1,15 @@
 import React from 'react';
 
+import Filters from '../../filters/Filters';
+
+import css from './banner.module.scss';
+
 const Banner = (): JSX.Element => {
     return (
-        <div className="main_content">
-            <div className="content_banner">
-                <img className="banner_image" src="/images/banner.jpeg" alt="banner" />
-                <div className="banner_text">Lorem ipsum dolor</div>
+        <div className={css.main_content}>
+            <div className={css.content_banner}>
+                <img className={css.banner_image} src="/images/banner.jpeg" alt="banner" />
+                <Filters />
             </div>
         </div>
     );
