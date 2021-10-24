@@ -1,11 +1,10 @@
 import React from 'react';
 
+import { ThemeProvider } from '@mui/material/styles';
+
 import Footer from '../footer/footer';
 import Header from '../header/header';
-
-import {ThemeProvider } from '@mui/material/styles';
 import THEME from '../theme/theme';
-
 
 interface Props {
     children: JSX.Element;
@@ -14,11 +13,11 @@ interface Props {
 const RootLayout = ({ children }: Props): JSX.Element => {
     return (
         <>
-        <ThemeProvider theme={THEME}>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-        </ThemeProvider>
+            <ThemeProvider theme={THEME}>
+                <Header />
+                <main>{children}</main>
+                <Footer />
+            </ThemeProvider>
         </>
     );
 };

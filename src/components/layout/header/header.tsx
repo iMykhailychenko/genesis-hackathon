@@ -24,7 +24,7 @@ const Header = (): JSX.Element => {
     };
 
     return (
-        <AppBar position="static" sx={{bgcolor: 'primary.main'}}>
+        <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
             <Toolbar>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
                     <img src="images/icons_cafeteria.svg" alt="logo" />
