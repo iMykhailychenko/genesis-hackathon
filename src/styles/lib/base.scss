@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    color: var(--black);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    background: var(--white);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input:hover,
+input:focus,
+input[type='text'],
+button:hover,
+button:focus,
+button[type='text'],
+textarea:hover,
+textarea:focus,
+textarea[type='text'],
+select:hover,
+select:focus,
+select[type='text'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+select,
+textarea,
+button,
+a {
+    outline: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body .MuiSvgIcon-root {
+    font-size: inherit;
+}
+
+#__next {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+}
+
+.MuiSvgIcon-root svg {
+    height: 1em;
+    width: 1em;
+    min-height: 1em;
+    min-width: 1em;
+}
+
+:-webkit-autofill {
+    color: var(--black) !important;
+}
