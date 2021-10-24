@@ -11,6 +11,7 @@ import { useFormik } from 'formik';
 import { GetServerSideProps } from 'next';
 import * as Yup from 'yup';
 
+import Meta from '../components/meta/meta';
 import { withAuthRedirect } from '../helpers/ssr.helper';
 import { useAppDispatch } from '../hooks/redux.hook';
 import useTrans from '../hooks/trans.hook';
@@ -47,58 +48,61 @@ const JoinPage = (): JSX.Element => {
     });
 
     return (
-        <form className="registration_form" onSubmit={formik.handleSubmit}>
-            <Typography sx={{ marginBottom: '30px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
-                Join
-            </Typography>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="firstName">
-                    Ім&apos;я
-                </FormLabel>
-                <TextField name="firstName" id="firstName" value={formik.values.firstName} onChange={formik.handleChange} />
-            </FormControl>
+        <>
+            <Meta title="Логін" />
+            <form className="registration_form" onSubmit={formik.handleSubmit}>
+                <Typography sx={{ marginBottom: '30px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
+                    Join
+                </Typography>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="firstName">
+                        Ім&apos;я
+                    </FormLabel>
+                    <TextField name="firstName" id="firstName" value={formik.values.firstName} onChange={formik.handleChange} />
+                </FormControl>
 
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="lastName">
-                    Прізвище
-                </FormLabel>
-                <TextField name="lastName" id="lastName" value={formik.values.lastName} onChange={formik.handleChange} />
-            </FormControl>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="lastName">
+                        Прізвище
+                    </FormLabel>
+                    <TextField name="lastName" id="lastName" value={formik.values.lastName} onChange={formik.handleChange} />
+                </FormControl>
 
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Електронна адреса
-                </FormLabel>
-                <TextField name="email" type="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
-            </FormControl>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                        Електронна адреса
+                    </FormLabel>
+                    <TextField name="email" type="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
+                </FormControl>
 
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="password">
-                    Пароль
-                </FormLabel>
-                <TextField
-                    name="password"
-                    type="password"
-                    id="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                />
-            </FormControl>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="password">
+                        Пароль
+                    </FormLabel>
+                    <TextField
+                        name="password"
+                        type="password"
+                        id="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                    />
+                </FormControl>
 
-            <FormControl fullWidth>
-                <FormLabel sx={{ marginBottom: '10px' }} id="role">
-                    Роль на сайті
-                </FormLabel>
+                <FormControl fullWidth>
+                    <FormLabel sx={{ marginBottom: '10px' }} id="role">
+                        Роль на сайті
+                    </FormLabel>
 
-                <Select labelId="role" id="role" name="role" value={formik.values.role} onChange={formik.handleChange}>
-                    <MenuItem value={UserRole.USER}>Користувач</MenuItem>
-                    <MenuItem value={UserRole.ADMIN}>Власник закладу</MenuItem>
-                </Select>
-            </FormControl>
-            <Button sx={{ marginTop: '20px' }} variant="contained" size="large" type="submit">
-                Зареєструватися
-            </Button>
-        </form>
+                    <Select labelId="role" id="role" name="role" value={formik.values.role} onChange={formik.handleChange}>
+                        <MenuItem value={UserRole.USER}>Користувач</MenuItem>
+                        <MenuItem value={UserRole.ADMIN}>Власник закладу</MenuItem>
+                    </Select>
+                </FormControl>
+                <Button sx={{ marginTop: '20px' }} variant="contained" size="large" type="submit">
+                    Зареєструватися
+                </Button>
+            </form>
+        </>
     );
 };
 

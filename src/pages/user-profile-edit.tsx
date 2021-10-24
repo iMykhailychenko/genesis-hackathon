@@ -2,9 +2,10 @@ import React from 'react';
 
 import { Button } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
-import Divider from '@mui/material/Divider';
 import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
+
+import Meta from '../components/meta/meta';
 
 const UserProfileEdit = (user1: any): JSX.Element => {
     const user = {
@@ -16,29 +17,32 @@ const UserProfileEdit = (user1: any): JSX.Element => {
         role: 'admin',
     };
     return (
-        <div className="profile-edit">
-            <div className="profile_avatar">
-                <Avatar sx={{ width: '200px', height: '200px', marginBottom: '20px' }} alt="avatar" src={user.avatar} />
-                <Button sx={{ display: 'block' }} variant="contained" size="large">
-                    Змінити аватар
-                </Button>
+        <>
+            <Meta title="Профіль користувача" />
+            <div className="profile-edit">
+                <div className="profile_avatar">
+                    <Avatar sx={{ width: '200px', height: '200px', marginBottom: '20px' }} alt="avatar" src={user.avatar} />
+                    <Button sx={{ display: 'block' }} variant="contained" size="large">
+                        Змінити аватар
+                    </Button>
+                </div>
+
+                <div className="profile_information-edit">
+                    <InputLabel id="demo-simple-select-label">Ім&apos;я</InputLabel>
+                    <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
+
+                    <InputLabel id="demo-simple-select-label">Прізвище</InputLabel>
+                    <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
+
+                    <InputLabel id="demo-simple-select-label">Електронна адреса</InputLabel>
+                    <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
+
+                    <Button sx={{ display: 'block' }} variant="contained" size="large">
+                        Редагувати профіль
+                    </Button>
+                </div>
             </div>
-
-            <div className="profile_information-edit">
-                <InputLabel id="demo-simple-select-label">Ім&apos;я</InputLabel>
-                <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
-
-                <InputLabel id="demo-simple-select-label">Прізвище</InputLabel>
-                <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
-
-                <InputLabel id="demo-simple-select-label">Електронна адреса</InputLabel>
-                <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
-
-                <Button sx={{ display: 'block' }} variant="contained" size="large">
-                    Редагувати профіль
-                </Button>
-            </div>
-        </div>
+        </>
     );
 };
 

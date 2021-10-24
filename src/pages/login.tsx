@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
@@ -7,6 +9,7 @@ import { useFormik } from 'formik';
 import { GetServerSideProps } from 'next';
 import * as Yup from 'yup';
 
+import Meta from '../components/meta/meta';
 import { withAuthRedirect } from '../helpers/ssr.helper';
 import { useAppDispatch } from '../hooks/redux.hook';
 import useTrans from '../hooks/trans.hook';
@@ -33,32 +36,36 @@ const LoginPage = (): JSX.Element => {
     });
 
     return (
-        <form className="login_form" onSubmit={formik.handleSubmit}>
-            <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
-                Log in
-            </Typography>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Електронна адреса
-                </FormLabel>
-                <TextField type="email" name="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
-            </FormControl>
-            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Пароль
-                </FormLabel>
-                <TextField
-                    type="password"
-                    name="empasswordail"
-                    id="password"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                />
-            </FormControl>
-            <Button variant="contained" size="large" type={'submit'}>
-                Вхід
-            </Button>
-        </form>
+        <>
+            <Meta title="Зареєструватись" />
+
+            <form className="login_form" onSubmit={formik.handleSubmit}>
+                <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
+                    Log in
+                </Typography>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                        Електронна адреса
+                    </FormLabel>
+                    <TextField type="email" name="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
+                </FormControl>
+                <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                    <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                        Пароль
+                    </FormLabel>
+                    <TextField
+                        type="password"
+                        name="empasswordail"
+                        id="password"
+                        value={formik.values.password}
+                        onChange={formik.handleChange}
+                    />
+                </FormControl>
+                <Button variant="contained" size="large" type={'submit'}>
+                    Вхід
+                </Button>
+            </form>
+        </>
     );
 };
 
