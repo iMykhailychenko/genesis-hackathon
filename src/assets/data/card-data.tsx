@@ -51,7 +51,7 @@ const CARD_DATA = [
     },
     {
         id: 6,
-        image: '/images/coffe-shop.jpg',
+        image: '/images/coffee-shop.jpg',
         title: 'Коффе-шоп',
         imageAlt: 'The Best Cafe3',
         rating: 3,
@@ -61,7 +61,7 @@ const CARD_DATA = [
     },
     {
         id: 7,
-        image: '/images//pizzeria-2.jpg',
+        image: '/images/pizzeria-2.jpg',
         title: 'Пиццерия',
         imageAlt: 'The Best Cafe3',
         rating: 4,
