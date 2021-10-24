@@ -21,6 +21,9 @@ const THEME = createTheme({
                 icon: {
                     color: 'white',
                 },
+                iconStandard: {
+                    color: 'white',
+                },
             },
         },
     },

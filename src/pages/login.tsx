@@ -1,6 +1,10 @@
 import { FormEvent, useState } from 'react';
 
-import { Typography, FormControl, Input, FormLabel, Button } from '@mui/material';
+import Button from '@mui/material/Button';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 
 import { useAuth } from '../context/auth/auth';
 
@@ -15,19 +19,25 @@ const LoginPage = (): JSX.Element => {
     };
 
     return (
-        <form onSubmit={handleLogin}>
-            <Typography variant="h1" fontSize={28} fontWeight={'bold'}>
+        <form className="login_form" onSubmit={handleLogin}>
+            <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
                 Log in
             </Typography>
-            <FormControl>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Input type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                    Email
+                </FormLabel>
+                <TextField type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
             </FormControl>
-            <FormControl>
-                <FormLabel htmlFor="email">Password</FormLabel>
-                <Input type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
+            <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
+                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                    Password
+                </FormLabel>
+                <TextField type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} />
             </FormControl>
-            <Button type={'submit'}>Log In </Button>
+            <Button variant="contained" size="large" type={'submit'}>
+                Log In
+            </Button>
         </form>
     );
 };

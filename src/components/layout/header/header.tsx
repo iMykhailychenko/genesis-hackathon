@@ -34,11 +34,11 @@ const Header = (): JSX.Element => {
 
                 <FormControl variant="standard">
                     <Select
-                        disableUnderline
                         className={css.select}
                         labelId="language"
                         value={history.locale}
                         onChange={handleChange}
+                        disableUnderline
                     >
                         <MenuItem sx={{ minWidth: 60, fontSize: '1.2rem' }} value={LANGUAGE_ENUM.UA}>
                             {LANGUAGE_ENUM.UA}
