@@ -11,24 +11,16 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Toolbar from '@mui/material/Toolbar';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import useAuth from '../../../hooks/auth.hook';
 import { LANGUAGE_ENUM } from '../../../interfaces';
-import { useAuthSelector } from '../../../state/entities/auth/auth.selector';
 
 import css from './header.module.scss';
 
 const Header = (): JSX.Element => {
     const history = useRouter();
-<<<<<<< HEAD
-    const auth = useAuthSelector();
-
-    console.log(auth.accessToken);
-=======
     const [auth] = useAuth();
->>>>>>> bf69894 (post form)
 
     const handleChange = (event: SelectChangeEvent<string>): void => {
         history.push(history.pathname, history.asPath, { locale: event.target.value, scroll: false });
@@ -71,26 +63,14 @@ const Header = (): JSX.Element => {
                     <BookmarkBorderIcon />
                 </IconButton>
 
-<<<<<<< HEAD
-                {auth.accessToken ? (
-                    <Button color="inherit">
-                        <Link href="/profile">
-                            <Avatar src="/broken-image.jpg" />
-                        </Link>
-=======
                 {auth?.accessToken ? (
                     <Button color="inherit" onClick={() => history.push('/profile')}>
                         <Avatar src="/broken-image.jpg" />
->>>>>>> bf69894 (post form)
                     </Button>
                 ) : (
                     <ButtonGroup variant="contained">
                         <Button onClick={() => history.push('/login')}>Login</Button>
-<<<<<<< HEAD
-                        <Button onClick={() => history.push('/join')}>Join</Button>
-=======
                         <Button onClick={() => history.push('/registration')}>Join</Button>
->>>>>>> bf69894 (post form)
                     </ButtonGroup>
                 )}
             </Toolbar>
