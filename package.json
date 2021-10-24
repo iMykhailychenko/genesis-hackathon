@@ -5,7 +5,7 @@
     "scripts": {
         "build": "next build",
         "postbuild": "next-sitemap",
-        "dev": "next dev",
+        "dev": "NODE_OPTIONS='--inspect' next dev",
         "start": "next start",
         "husky": "husky install",
         "lint-staged": "lint-staged --config .lintstagedrc.json",
@@ -14,7 +14,15 @@
         "prettier": "prettier  -c .prettierrc --write"
     },
     "dependencies": {
+        "@emotion/react": "^11.5.0",
+        "@emotion/styled": "^11.3.0",
+        "@mui/material": "^5.0.4",
+        "@types/cookies": "^0.7.7",
+        "@types/js-cookie": "^3.0.0",
+        "axios": "^0.23.0",
         "clsx": "^1.1.1",
+        "cookie": "^0.4.1",
+        "js-cookie": "^3.0.1",
         "nanoid": "^3.1.23",
         "next": "11.0.1",
         "next-s3-upload": "^0.1.7",
@@ -22,6 +30,7 @@
         "react-dom": "17.0.2"
     },
     "devDependencies": {
+        "@types/cookie": "^0.4.1",
         "@types/react": "^17.0.19",
         "@types/react-dom": "^17.0.9",
         "@types/react-redux": "^7.1.18",
