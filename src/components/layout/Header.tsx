@@ -1,6 +1,11 @@
 import React, { ReactElement, useState } from 'react';
 
-import { AppBar, Toolbar, IconButton, Typography, Button, Avatar } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 export default function Header(): ReactElement {
     const [language, setLanguage] = useState<string>('UA');

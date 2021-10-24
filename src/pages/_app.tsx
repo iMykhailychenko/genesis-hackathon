@@ -6,6 +6,8 @@ import { AppContextType } from 'next/dist/next-server/lib/utils';
 import { Router } from 'next/router';
 import './styles.scss';
 
+import Footer from '../components/layout/Footer';
+import Header from '../components/layout/Header';
 import RootProvider from '../context/root-provider';
 
 interface IProps {
