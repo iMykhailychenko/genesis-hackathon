@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import RatingStatic from '../../rating/rating-static';
 import Box from '@mui/material/Box';
 
+
 import {IComment} from '../../../interfaces/comment';
 
 const Comment = ({...props}:IComment): JSX.Element => {
