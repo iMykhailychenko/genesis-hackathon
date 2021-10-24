@@ -15,7 +15,7 @@ export const authLoginThunk = createAsyncThunk<IAuthResponse, ILoginPayload>(
             const { data, status } = await authServices.login(payload);
             if (status < 200 || status >= 300) throw new Error();
 
-            Cookies.set('house_rent_auth', JSON.stringify(data), { expires: addMonthToDate(1) });
+            Cookies.set('auth_cookie', JSON.stringify(data), { expires: addMonthToDate(1) });
             axios.defaults.headers.common.Authorization = data.accessToken as string;
             await dispatch(profileInfoThunk());
 

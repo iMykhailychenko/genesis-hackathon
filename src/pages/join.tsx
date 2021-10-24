@@ -3,7 +3,6 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
@@ -48,31 +47,35 @@ const JoinPage = (): JSX.Element => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
+        <form className="registration_form" onSubmit={formik.handleSubmit}>
+            <Typography sx={{ marginBottom: '30px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
                 Join
             </Typography>
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
                 <FormLabel sx={{ marginBottom: '10px' }} htmlFor="firstName">
-                    First name
+                    Ім&apos;я
                 </FormLabel>
                 <TextField name="firstName" id="firstName" value={formik.values.firstName} onChange={formik.handleChange} />
             </FormControl>
 
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
                 <FormLabel sx={{ marginBottom: '10px' }} htmlFor="lastName">
-                    Last name
+                    Прізвище
                 </FormLabel>
                 <TextField name="lastName" id="lastName" value={formik.values.lastName} onChange={formik.handleChange} />
             </FormControl>
 
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel htmlFor="email">Email</FormLabel>
+                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
+                    Електронна адреса
+                </FormLabel>
                 <TextField name="email" type="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
             </FormControl>
 
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
-                <FormLabel htmlFor="password">Password</FormLabel>
+                <FormLabel sx={{ marginBottom: '10px' }} htmlFor="password">
+                    Пароль
+                </FormLabel>
                 <TextField
                     name="password"
                     type="password"
@@ -83,20 +86,18 @@ const JoinPage = (): JSX.Element => {
             </FormControl>
 
             <FormControl fullWidth>
-                <InputLabel id="role">Роль на сайті</InputLabel>
-                <Select
-                    labelId="role"
-                    id="role"
-                    name="role"
-                    value={formik.values.role}
-                    label="Роль на сайті"
-                    onChange={formik.handleChange}
-                >
+                <FormLabel sx={{ marginBottom: '10px' }} id="role">
+                    Роль на сайті
+                </FormLabel>
+
+                <Select labelId="role" id="role" name="role" value={formik.values.role} onChange={formik.handleChange}>
                     <MenuItem value={UserRole.USER}>Користувач</MenuItem>
                     <MenuItem value={UserRole.ADMIN}>Власник закладу</MenuItem>
                 </Select>
             </FormControl>
-            <Button type="submit">Sign Up</Button>
+            <Button sx={{ marginTop: '20px' }} variant="contained" size="large" type="submit">
+                Зареєструватися
+            </Button>
         </form>
     );
 };

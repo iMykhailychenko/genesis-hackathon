@@ -2,6 +2,7 @@ import React from 'react';
 
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -12,12 +13,14 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Toolbar from '@mui/material/Toolbar';
 import { useRouter } from 'next/router';
 
+import useAuth from '../../../hooks/auth.hook';
 import { LANGUAGE_ENUM } from '../../../interfaces';
 
 import css from './header.module.scss';
 
 const Header = (): JSX.Element => {
     const history = useRouter();
+    const [auth] = useAuth();
 
     const handleChange = (event: SelectChangeEvent<string>): void => {
         history.push(history.pathname, history.asPath, { locale: event.target.value, scroll: false });
@@ -60,16 +63,16 @@ const Header = (): JSX.Element => {
                     <BookmarkBorderIcon />
                 </IconButton>
 
-                {/* <Button color="inherit">
-                    <Link href="/profile">
+                {auth?.accessToken ? (
+                    <Button color="inherit" onClick={() => history.push('/profile')}>
                         <Avatar src="/broken-image.jpg" />
-                    </Link>
-                </Button> */}
-
-                <ButtonGroup variant="contained">
-                    <Button onClick={() => history.push('/login')}>Login</Button>
-                    <Button onClick={() => history.push('/registration')}>Join</Button>
-                </ButtonGroup>
+                    </Button>
+                ) : (
+                    <ButtonGroup variant="contained">
+                        <Button onClick={() => history.push('/login')}>Login</Button>
+                        <Button onClick={() => history.push('/registration')}>Join</Button>
+                    </ButtonGroup>
+                )}
             </Toolbar>
         </AppBar>
     );

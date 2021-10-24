@@ -4,11 +4,9 @@ import { Button } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import InputLabel from '@mui/material/InputLabel';
-
-import { IUser } from '../../interfaces/user';
 import TextField from '@mui/material/TextField';
 
-const UserProfileEdit = (user1: IUser): JSX.Element => {
+const UserProfileEdit = (user1: any): JSX.Element => {
     const user = {
         avatar: '/static/images/avatar/1.jpg',
         firstName: 'Test Name',
@@ -22,22 +20,22 @@ const UserProfileEdit = (user1: IUser): JSX.Element => {
             <div className="profile_avatar">
                 <Avatar sx={{ width: '200px', height: '200px', marginBottom: '20px' }} alt="avatar" src={user.avatar} />
                 <Button sx={{ display: 'block' }} variant="contained" size="large">
-                    Изменить аватар
+                    Змінити аватар
                 </Button>
             </div>
 
             <div className="profile_information-edit">
-                <InputLabel id="demo-simple-select-label">Имя</InputLabel>
+                <InputLabel id="demo-simple-select-label">Ім&apos;я</InputLabel>
                 <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
 
-                <InputLabel id="demo-simple-select-label">Фамилия</InputLabel>
+                <InputLabel id="demo-simple-select-label">Прізвище</InputLabel>
                 <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
 
-                <InputLabel id="demo-simple-select-label">Электронная почта</InputLabel>
+                <InputLabel id="demo-simple-select-label">Електронна адреса</InputLabel>
                 <TextField sx={{ marginBottom: '25px', width: '100%' }} id="outlined-basic" variant="outlined" />
 
                 <Button sx={{ display: 'block' }} variant="contained" size="large">
-                    Редактировать профиль
+                    Редагувати профіль
                 </Button>
             </div>
         </div>

@@ -5,21 +5,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import RatingStatic from '../../common/rating/rating-static';
 import Link from 'next/link';
+
+// import { IPost } from '../../../interfaces/post';
+import RatingStatic from '../../common/rating/rating-static';
 
 import css from './post-card.module.scss';
 
-import { IPost } from '../../../interfaces/post';
-
-const PostCard = ({ ...props }: IPost): JSX.Element => {
+const PostCard = ({ ...props }: any): JSX.Element => {
     return (
-        <Link  href={`/cafe/${props.id}`} >
-
+        <Link href={`/cafe/${props.id}`}>
             <Card className={css.link} sx={{ maxWidth: '100%', display: 'flex', flexWrap: 'wrap', mb: 2, minHeight: 200 }}>
                 <CardMedia component="img" sx={{ objectFit: 'cover', maxWidth: 250 }} image={props.image} alt={props.title} />
                 <Box sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
-                    <CardContent >
+                    <CardContent>
                         <Typography component="h3" variant="h4" gutterBottom>
                             {props.title}
                         </Typography>

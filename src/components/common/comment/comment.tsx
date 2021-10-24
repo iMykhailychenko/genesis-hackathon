@@ -7,9 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import RatingStatic from '../rating/rating-static';
 
 import { IComment } from '../../../interfaces/comment';
+import RatingStatic from '../rating/rating-static';
 
 const Comment = ({ ...props }: IComment): JSX.Element => {
     return (
