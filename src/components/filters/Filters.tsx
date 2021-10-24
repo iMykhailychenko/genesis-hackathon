@@ -12,7 +12,7 @@ import clsx from 'clsx';
 
 import css from './filters.module.scss';
 
-export default function Filters(): ReactElement {
+const Filters = (): JSX.Element => {
     const [search, setSearch] = useState<string>();
     const [rating, setRating] = useState<number | null>(0);
     const [price, setPrice] = useState<string>();
@@ -119,4 +119,6 @@ export default function Filters(): ReactElement {
             </div>
         </>
     );
-}
+};
+
+export default Filters;
