@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { ThemeProvider } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -11,7 +9,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Rating from '@mui/material/Rating';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
-import clsx from 'clsx';
 
 import { selectTheme } from '../layout/theme/theme';
 
@@ -35,7 +32,7 @@ const Filters = (): JSX.Element => {
     return (
         <>
             <div className={css.filters}>
-                <div className={css.filters_title}>Фильтрация</div>
+                <div className={css.filters_title}>Фільтрація</div>
                 <div className={css.search}>
                     <TextField
                         value={search}
@@ -50,7 +47,7 @@ const Filters = (): JSX.Element => {
                     <div className={css.filter_wrapper}>
                         <div className={css.rating}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Рейтинг заведения
+                                Рейтинг закладу
                             </InputLabel>
                             <Rating
                                 name="simple-controlled"
@@ -62,7 +59,7 @@ const Filters = (): JSX.Element => {
                         </div>
                         <div className={css.price}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Средний чек
+                                Середній чек
                             </InputLabel>
                             <FormGroup>
                                 <FormControlLabel sx={{ height: '25px' }} control={<Checkbox size="small" />} label="$" />
@@ -75,14 +72,14 @@ const Filters = (): JSX.Element => {
                     <div className={css.filter_wrapper}>
                         <div className={css.animals}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Можно с животными
+                                Можна з тваринами
                             </InputLabel>
                             <Checkbox size="small" />
                         </div>
 
                         <div className={css.place_type}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Тип заведения
+                                Тип закладу
                             </InputLabel>
                             <ThemeProvider theme={selectTheme}>
                                 <Select
@@ -94,8 +91,8 @@ const Filters = (): JSX.Element => {
                                 >
                                     <MenuItem value="Кафе">Кафе</MenuItem>
                                     <MenuItem value="Ресторан">Ресторан</MenuItem>
-                                    <MenuItem value="Кофейня">Кофейня</MenuItem>
-                                    <MenuItem value="Пиццерия">Пиццерия</MenuItem>
+                                    <MenuItem value="Кофейня">Кав&apos;ярня</MenuItem>
+                                    <MenuItem value="Пиццерия">Піццерія</MenuItem>
                                     <MenuItem value="Бар">Бар</MenuItem>
                                 </Select>
                             </ThemeProvider>

@@ -11,7 +11,7 @@ const NotAllowToLeaveComment = (): JSX.Element => {
             <Typography>
                 <Link href="/login">Войдите </Link>
                 или
-                <Link href="/registration"> Зарегестрируйтесь</Link>
+                <Link href="/join"> Зарегестрируйтесь</Link>
             </Typography>
         </Box>
     );
