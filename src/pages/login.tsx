@@ -4,14 +4,13 @@ import FormLabel from '@mui/material/FormLabel';
 import Input from '@mui/material/Input';
 import Typography from '@mui/material/Typography';
 import { useFormik } from 'formik';
+import { GetServerSideProps } from 'next';
 import * as Yup from 'yup';
 
+import { withAuthRedirect } from '../helpers/ssr.helper';
 import { useAppDispatch } from '../hooks/redux.hook';
 import useTrans from '../hooks/trans.hook';
-import { useAuthSelector } from '../state/entities/auth/auth.selector';
 import { authLoginThunk } from '../state/entities/auth/auth.thunk';
-import { GetServerSideProps } from 'next';
-import { withAuthRedirect } from '../helpers/ssr.helper';
 
 const LoginSchema = Yup.object().shape({
     email: Yup.string().email('invalid_email').required('required'),
@@ -21,7 +20,6 @@ const LoginSchema = Yup.object().shape({
 const LoginPage = (): JSX.Element => {
     const trans = useTrans();
     const dispatch = useAppDispatch();
-    const authState = useAuthSelector();
 
     const formik = useFormik({
         initialValues: {

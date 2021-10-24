@@ -7,14 +7,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import { useFormik } from 'formik';
+import { GetServerSideProps } from 'next';
 import * as Yup from 'yup';
 
+import { withAuthRedirect } from '../helpers/ssr.helper';
 import { useAppDispatch } from '../hooks/redux.hook';
 import useTrans from '../hooks/trans.hook';
 import { UserRole } from '../interfaces';
 import { authJoinThunk } from '../state/entities/auth/auth.thunk';
-import { GetServerSideProps } from 'next';
-import { withAuthRedirect } from '../helpers/ssr.helper';
 
 const JoinSchema = Yup.object().shape({
     firstName: Yup.string().min(1, 'short_input').max(50, 'long_input').required('required'),
