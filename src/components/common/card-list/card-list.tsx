@@ -11,6 +11,7 @@ const CardList = (): JSX.Element => {
             {CARD_DATA.map((cardProps, i) => {
                 return <PostCard key={i} {...cardProps} />;
             })}
+            test test
         </Container>
     );
 };
