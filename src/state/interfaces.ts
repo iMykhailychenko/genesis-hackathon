@@ -9,7 +9,7 @@ export type ThunkStatuses = 'idle' | 'loading' | 'success' | 'error';
 export interface IState {
     auth: IAuthState;
     profile: IProfileInfoState;
-    users: IUserState,
+    users: IUserState;
 }
 
 export type AsyncThunkConfig = {
