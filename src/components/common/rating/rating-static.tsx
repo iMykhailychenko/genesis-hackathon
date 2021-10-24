@@ -8,7 +8,7 @@ interface IRating {
 
 const RatingStatic = ({rating}:IRating): JSX.Element => {
     return(
-        <Rating name="read-only" value={rating} sx={{ml: 2}} readOnly />
+        <Rating name="read-only" value={rating} readOnly />
     )
 };
 

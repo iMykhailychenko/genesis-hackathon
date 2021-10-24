@@ -13,7 +13,7 @@ interface Props {
 
 const CafeCardImg = ({image, title}: Props): JSX.Element => {
     return(
-        <Card sx={{  flexGrow: 1, mr: 2 }}>
+        <Card sx={{  flexGrow: 1, mr: 2, boxShadow: 'none' }}>
         <CardMedia component="img" sx = {{ maxHeight: 500 }} image={image} alt={title} />
             <CardContent>
                 <Typography variant='h4'></Typography>

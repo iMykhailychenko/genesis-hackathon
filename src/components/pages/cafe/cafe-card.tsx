@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import Container from '@mui/material/Container';
+
 import CafeCardImg from './components/cafe-image-card';
 import RatingCard from './components/rating-card';
 
@@ -17,7 +18,7 @@ const CafeCard = ({...props}:IPost): JSX.Element => {
         <Container maxWidth="lg" sx={{mt:2}}>
             <Box>
             <Typography component="h2" variant="h3" gutterBottom>
-                    {props.title}
+                    {props.title} 
                 </Typography> 
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
                     {props.type}
