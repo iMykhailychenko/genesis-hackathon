@@ -1,12 +1,16 @@
 import React, { ReactElement, useState } from 'react';
 
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Rating from '@mui/material/Rating';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
+import clsx from 'clsx';
 
-import './filters.module.scss';
+import css from './filters.module.scss';
 
 export default function Filters(): ReactElement {
     const [search, setSearch] = useState<string>();
@@ -25,10 +29,10 @@ export default function Filters(): ReactElement {
 
     return (
         <>
-            <div className="filters">
-                <div className="filters_title">Фильтрация</div>
-                <div className="filters_content">
-                    <div className="search">
+            <div className={css.filters}>
+                <div className={css.filters_title}>Фильтрация</div>
+                <div className={css.filters_content}>
+                    <div className={css.search}>
                         <TextField
                             value={search}
                             onChange={handleSearch}
@@ -37,7 +41,7 @@ export default function Filters(): ReactElement {
                             variant="outlined"
                         />
                     </div>
-                    <div className="rating">
+                    <div className={css.rating}>
                         <InputLabel id="demo-simple-select-label">Рейтинг заведения</InputLabel>
                         <Rating
                             name="simple-controlled"
@@ -47,28 +51,21 @@ export default function Filters(): ReactElement {
                             }}
                         />
                     </div>
-                    <div className="price">
+                    <div className={css.price}>
                         <InputLabel id="demo-simple-select-label">Средний чек</InputLabel>
-                        <label className="container" htmlFor="min">
-                            $
-                            <input className="price_checkbox" type="checkbox" id="min" name="min" />
-                            <span className="checkmark"></span>
-                        </label>
-
-                        <label className="container" htmlFor="med">
-                            $$
-                            <input className="price_checkbox" type="checkbox" id="med" name="med" />
-                            <span className="checkmark"></span>
-                        </label>
-
-                        <label className="container" htmlFor="max">
-                            $$$
-                            <input className="price_checkbox" type="checkbox" id="max" name="max" />
-                            <span className="checkmark"></span>
-                        </label>
+                        <FormGroup>
+                            <FormControlLabel sx={{ height: '25px' }} control={<Checkbox size="small" />} label="$" />
+                            <FormControlLabel sx={{ height: '25px' }} control={<Checkbox size="small" />} label="$$" />
+                            <FormControlLabel sx={{ height: '25px' }} control={<Checkbox size="small" />} label="$$$" />
+                        </FormGroup>
                     </div>
 
-                    <div className="place_type">
+                    <div className={css.animals}>
+                        <InputLabel id="demo-simple-select-label">Можно с животными</InputLabel>
+                        <Checkbox size="small" />
+                    </div>
+
+                    <div className={css.place_type}>
                         <InputLabel id="demo-simple-select-label">Тип заведения</InputLabel>
                         <Select
                             sx={{ minWidth: 120, maxWidth: 190 }}
@@ -87,32 +84,32 @@ export default function Filters(): ReactElement {
                 </div>
             </div>
 
-            <div className="sorting">
-                <div className="sorting_title">Сортировка по:</div>
-                <div className="sorting_content">
-                    <div className="sort-form">
-                        <ul className="sort-list">
-                            <li className="sort-list__item">
+            <div className={css.sorting}>
+                <div className={css.sorting_title}>Сортировка по:</div>
+                <div className={css.sorting_content}>
+                    <div className={css.sort_form}>
+                        <ul className={css.sort_list}>
+                            <li className={css.sort_list__item}>
                                 <input id="input-sort-0" type="radio" name="sort" value="name" />
                                 <label htmlFor="input-sort-0">имени</label>
                             </li>
-                            <li className="sort-list__item">
+                            <li className={css.sort_list__item}>
                                 <input id="input-sort-1" type="radio" name="sort" value="price" />
                                 <label htmlFor="input-sort-1">рейтингу</label>
                             </li>
-                            <li className="sort-list__item default">
+                            <li className={clsx(css.sort_list__item)}>
                                 <input id="input-sort-2" type="radio" name="sort" value="customers_rating" />
                                 <label htmlFor="input-sort-2">среднему чеку</label>
                             </li>
-                            <li className="sort-list__item direction">
+                            <li className={clsx(css.sort_list__item, css.direction)}>
                                 <input id="input-sort-up" type="radio" name="direction" value="asc" />
-                                <label htmlFor="input-sort-up" className="up">
+                                <label htmlFor="input-sort-up" className={css.up}>
                                     <span>по возрастанию</span>
                                 </label>
                             </li>
-                            <li className="sort-list__item direction default">
+                            <li className={clsx(css.sort_list__item, css.direction)}>
                                 <input id="input-sort-down" type="radio" name="direction" value="desc" />
-                                <label htmlFor="input-sort-down" className="down">
+                                <label htmlFor="input-sort-down" className={css.down}>
                                     <span>по убыванию</span>
                                 </label>
                             </li>

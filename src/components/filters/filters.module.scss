@@ -1,8 +1,5 @@
 .filters_title {
-    position: absolute;
-    top: -16px;
     font-size: 24px;
-    background: white;
 }
 
 .filters {
@@ -12,6 +9,7 @@
     border-radius: 3px;
     margin: 20px auto;
     padding: 20px 60px;
+    background-color: white;
 }
 
 .filters_content {
@@ -105,6 +103,13 @@
     margin-bottom: 10px;
 }
 
+.animals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .sorting {
     position: relative;
     width: 90%;
@@ -112,13 +117,14 @@
     border-radius: 3px;
     margin: 20px auto;
     padding: 20px 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sorting_title {
-    position: absolute;
-    top: -16px;
     font-size: 24px;
-    background: white;
 }
 
 .sorting_content {
@@ -134,7 +140,7 @@
     list-style: none;
 }
 
-.sort-list__item {
+.sort_list__item {
     display: inline-block;
     vertical-align: middle;
     font-size: 18px;
@@ -145,40 +151,40 @@
     display: none;
 }
 
-.sort-list__item.direction {
+.sort_list__item.direction {
     margin: 0 0 0 10px;
 }
 
-.sort-list__item input {
+.sort_list__item input {
     display: none;
 }
 
-.sort-list__item label.down,
-.sort-list__item label.up {
+.sort_list__item label.down,
+.sort_list__item label.up {
     width: 30px;
     height: 30px;
     border: 1px solid #ccc;
 }
 
-.sort-list__item.direction span {
+.sort_list__item.direction span {
     display: none;
 }
 
-.sort-list__item label.up {
-    background-image: url('../../public/images/arrow-up.svg');
+.sort_list__item label.up {
+    background-image: url('../../../public/images/arrow-up.svg');
 }
 
-.sort-list__item label.down {
-    background-image: url('../../public/images/arrow-down.svg');
+.sort_list__item label.down {
+    background-image: url('../../../public/images/arrow-down.svg');
 }
 
-.sort-list__item input:checked + label {
-    color: #7cb342;
-    border-color: #7cb342;
+.sort_list__item input:checked + label {
+    color: black;
+    border-color: black;
     border-radius: 2px;
 }
 
-.sort-list__item label {
+.sort_list__item label {
     display: inline-block;
     vertical-align: middle;
     padding: 3px 10px;
