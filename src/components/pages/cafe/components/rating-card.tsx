@@ -28,7 +28,7 @@ const RatingCard = ({ rating, rewies }: Props): JSX.Element => {
                 </Box>
                 <CommentsList comments={COMMENT_DATA} />
                 <LeaveComment />
-                <NotAllowToLeaveComment />
+                {/* <NotAllowToLeaveComment /> */}
             </Container>
         </Card>
     );

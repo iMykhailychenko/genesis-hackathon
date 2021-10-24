@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import CafeCardImg from './components/cafe-image-card';
 import RatingCard from './components/rating-card';
 
-const CafeCard = ({ ...props }: any): JSX.Element => {
+const CafeCard = ({props}: any): JSX.Element => {
     return (
         <Container maxWidth="lg" sx={{ mt: 2 }}>
             <Box>
