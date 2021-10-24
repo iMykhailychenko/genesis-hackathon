@@ -10,10 +10,10 @@ import Rating from '@mui/material/Rating';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
+import useTrans from '../../hooks/trans.hook';
 import { selectTheme } from '../layout/theme/theme';
 
 import css from './filters.module.scss';
-import useTrans from '../../hooks/trans.hook';
 
 const Filters = (): JSX.Element => {
     const [search, setSearch] = useState<string>();

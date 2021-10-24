@@ -14,6 +14,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import useAuth from '../../../hooks/auth.hook';
 import { LANGUAGE_ENUM } from '../../../interfaces';
 import { useAuthSelector } from '../../../state/entities/auth/auth.selector';
 
@@ -21,9 +22,7 @@ import css from './header.module.scss';
 
 const Header = (): JSX.Element => {
     const history = useRouter();
-    const auth = useAuthSelector();
-
-    console.log(auth.accessToken);
+    const [auth] = useAuth();
 
     const handleChange = (event: SelectChangeEvent<string>): void => {
         history.push(history.pathname, history.asPath, { locale: event.target.value, scroll: false });
@@ -66,11 +65,9 @@ const Header = (): JSX.Element => {
                     <BookmarkBorderIcon />
                 </IconButton>
 
-                {auth.accessToken ? (
-                    <Button color="inherit">
-                        <Link href="/profile">
-                            <Avatar src="/broken-image.jpg" />
-                        </Link>
+                {auth?.accessToken ? (
+                    <Button color="inherit" onClick={() => history.push('/profile')}>
+                        <Avatar src="/broken-image.jpg" />
                     </Button>
                 ) : (
                     <ButtonGroup variant="contained">

@@ -41,7 +41,7 @@ MyApp.getInitialProps = async (appContext: AppContextType<Router>): Promise<IPro
     const props = await App.getInitialProps(appContext);
     // auth
     const auth = parseCookie<IAuthState>({
-        key: 'house_rent_auth',
+        key: 'auth_cookie',
         value: appContext?.ctx?.req?.headers?.cookie,
         defaultValue: authInitialState,
     });
