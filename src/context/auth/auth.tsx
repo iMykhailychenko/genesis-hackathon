@@ -26,7 +26,7 @@ const AuthProvider = ({ authServer = authInitialState, children }: IProps): JSX.
     useEffect(() => {
         if (process.browser) {
             if (auth?.accessToken) {
-                setValue(auth);
+                localStorage.setItem('token', auth.accessToken);
                 axios.defaults.headers.common.Authorization = auth.accessToken.includes('Bearer')
                     ? auth.accessToken
                     : `Bearer ${auth.accessToken}`;

@@ -39,13 +39,13 @@ const LoginPage = (): JSX.Element => {
             </Typography>
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
                 <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Email
+                    Електронна адреса
                 </FormLabel>
                 <TextField type="email" name="email" id="email" value={formik.values.email} onChange={formik.handleChange} />
             </FormControl>
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
                 <FormLabel sx={{ marginBottom: '10px' }} htmlFor="email">
-                    Password
+                    Пароль
                 </FormLabel>
                 <TextField
                     type="password"
@@ -56,7 +56,7 @@ const LoginPage = (): JSX.Element => {
                 />
             </FormControl>
             <Button variant="contained" size="large" type={'submit'}>
-                Log In
+                Вхід
             </Button>
         </form>
     );
