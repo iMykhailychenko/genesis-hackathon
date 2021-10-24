@@ -1,21 +1,14 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 
-import { IAuth } from '../interfaces/auth';
-import { Store } from '../store/store';
+import { IAuthState } from '../state/entities/auth/auth.interface';
 
-import { AuthProvider } from './auth/auth';
-import StoreProvider from './store/store';
+import AuthProvider from './auth/auth';
 
 interface IProps {
-    store: Store;
-    auth: IAuth;
+    auth: IAuthState;
     children: JSX.Element[] | JSX.Element;
 }
 
-const RootProvider = ({ store, auth, children }: IProps): ReactElement => (
-    <StoreProvider initialState={store}>
-        <AuthProvider myAuth={auth}>{children}</AuthProvider>
-    </StoreProvider>
-);
+const RootProvider = ({ auth, children }: IProps): JSX.Element => <AuthProvider authServer={auth}>{children}</AuthProvider>;
 
 export default RootProvider;
