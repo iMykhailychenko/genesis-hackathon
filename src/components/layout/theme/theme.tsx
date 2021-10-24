@@ -15,6 +15,15 @@ const THEME = createTheme({
             contrastText: '#000',
         },
     },
+    components: {
+        MuiSelect: {
+            styleOverrides: {
+                icon: {
+                    color: 'white',
+                },
+            },
+        },
+    },
 });
 
 export default THEME;

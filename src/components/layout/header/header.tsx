@@ -15,6 +15,7 @@ import { useRouter } from 'next/router';
 import { LANGUAGE_ENUM } from '../../../interfaces';
 
 import css from './header.module.scss';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const Header = (): JSX.Element => {
     const history = useRouter();
@@ -27,17 +28,23 @@ const Header = (): JSX.Element => {
         <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
             <Toolbar>
                 <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                    <img src="images/icons_cafeteria.svg" alt="logo" />
+                    <img src="/images/icons_cafeteria.svg" alt="logo" />
                 </IconButton>
 
                 <Box sx={{ flexGrow: 1 }} />
 
                 <FormControl variant="standard">
-                    <Select className={css.select} labelId="language" value={history.locale} label="Age" onChange={handleChange}>
-                        <MenuItem sx={{ minWidth: 100, fontSize: '1.6rem' }} value={LANGUAGE_ENUM.UA}>
+                    <Select
+                        disableUnderline
+                        className={css.select}
+                        labelId="language"
+                        value={history.locale}
+                        onChange={handleChange}
+                    >
+                        <MenuItem sx={{ minWidth: 60, fontSize: '1.2rem' }} value={LANGUAGE_ENUM.UA}>
                             {LANGUAGE_ENUM.UA}
                         </MenuItem>
-                        <MenuItem sx={{ minWidth: 100, fontSize: '1.6rem' }} value={LANGUAGE_ENUM.RU}>
+                        <MenuItem sx={{ minWidth: 60, fontSize: '1.2rem' }} value={LANGUAGE_ENUM.RU}>
                             {LANGUAGE_ENUM.RU}
                         </MenuItem>
                     </Select>
@@ -47,9 +54,14 @@ const Header = (): JSX.Element => {
                     <BookmarkBorderIcon />
                 </IconButton>
 
-                <Button color="inherit">
+                {/* <Button color="inherit">
                     <Avatar src="/broken-image.jpg" />
-                </Button>
+                </Button> */}
+
+                <ButtonGroup variant="contained">
+                    <Button>Login</Button>
+                    <Button>Join</Button>
+                </ButtonGroup>
             </Toolbar>
         </AppBar>
     );
