@@ -6,9 +6,15 @@ import Divider from '@mui/material/Divider';
 import InputLabel from '@mui/material/InputLabel';
 import TextField from '@mui/material/TextField';
 
-import { IUser } from '../../interfaces/user';
-
-const UserProfileEdit = (user: IUser): JSX.Element => {
+const UserProfileEdit = (user1: any): JSX.Element => {
+    const user = {
+        avatar: '/static/images/avatar/1.jpg',
+        firstName: 'Test Name',
+        lastName: 'Test Last Name',
+        mail: 'test@test.com',
+        createdAt: '2021-10-21',
+        role: 'admin',
+    };
     return (
         <div className="profile-edit">
             <div className="profile_avatar">

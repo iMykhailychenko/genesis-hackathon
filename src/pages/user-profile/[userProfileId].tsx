@@ -7,9 +7,9 @@ import InputLabel from '@mui/material/InputLabel';
 
 import CARD_DATA from '../../assets/data/card-data'; // must be removed
 import PostCard from '../../components/common/post-card/post-card';
-import { IUser } from '../../interfaces/user';
+// import { IUser } from '../../interfaces/user';
 
-const UserProfile = (user1: IUser): JSX.Element => {
+const UserProfile = (user1: any): JSX.Element => {
     const user = {
         avatar: '/static/images/avatar/1.jpg',
         firstName: 'Test Name',
