@@ -11,10 +11,12 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Toolbar from '@mui/material/Toolbar';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import useAuth from '../../../hooks/auth.hook';
 import { LANGUAGE_ENUM } from '../../../interfaces';
+import { useAuthSelector } from '../../../state/entities/auth/auth.selector';
 
 import css from './header.module.scss';
 
@@ -70,7 +72,7 @@ const Header = (): JSX.Element => {
                 ) : (
                     <ButtonGroup variant="contained">
                         <Button onClick={() => history.push('/login')}>Login</Button>
-                        <Button onClick={() => history.push('/registration')}>Join</Button>
+                        <Button onClick={() => history.push('/join')}>Join</Button>
                     </ButtonGroup>
                 )}
             </Toolbar>
