@@ -3,12 +3,14 @@ import React from 'react';
 import { Button } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
+// eslint-disable-next-line import/order
 import InputLabel from '@mui/material/InputLabel';
 
-import { IUser } from '../../interfaces/user';
+// import { IUser } from '../../interfaces/user';
+
 import TextField from '@mui/material/TextField';
 
-const UserProfileEdit = (user1: IUser): JSX.Element => {
+const UserProfileEdit = (user1: any): JSX.Element => {
     const user = {
         avatar: '/static/images/avatar/1.jpg',
         firstName: 'Test Name',

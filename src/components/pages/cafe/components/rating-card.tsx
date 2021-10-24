@@ -3,14 +3,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
+import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 
-import LeaveComment from '../../../common/comment/leave-comment';
-import CommentsList from '../../../common/comment-list.tsx/comment-list';
-import NotAllowToLeaveComment from '../../../common/comment/not-allow-leave-comment';
-
 import COMMENT_DATA from '../../../../assets/data/comment-data'; // must be removed
-import Rating from '@mui/material/Rating';
+import CommentsList from '../../../common/comment-list.tsx/comment-list';
+import LeaveComment from '../../../common/comment/leave-comment';
+import NotAllowToLeaveComment from '../../../common/comment/not-allow-leave-comment';
 
 interface Props {
     rating: number;
@@ -28,8 +27,8 @@ const RatingCard = ({ rating, rewies }: Props): JSX.Element => {
                     </Typography>
                 </Box>
                 <CommentsList comments={COMMENT_DATA} />
-                    <LeaveComment />
-                    <NotAllowToLeaveComment />
+                <LeaveComment />
+                <NotAllowToLeaveComment />
             </Container>
         </Card>
     );
