@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import { Button } from '@mui/material';
 import { useS3Upload } from 'next-s3-upload';
 
-const LoadAWSImage = (): JSX.Element => {
-    const [imageUrl, setImageUrl] = useState<string>();
+const LoadAWSImage: React.FC<{ setImageUrl: (url: string) => void }> = ({ setImageUrl }) => {
     const { FileInput, openFileDialog, uploadToS3 } = useS3Upload();
 
     const handleFileChange = async (file: File) => {
@@ -12,13 +12,10 @@ const LoadAWSImage = (): JSX.Element => {
     };
 
     return (
-        <div>
+        <>
             <FileInput onChange={handleFileChange} />
-
-            <button onClick={openFileDialog}>Upload file</button>
-
-            {imageUrl && <img src={imageUrl} alt="LoadedIimage" />}
-        </div>
+            <Button onClick={openFileDialog}>Upload avatar</Button>
+        </>
     );
 };
 

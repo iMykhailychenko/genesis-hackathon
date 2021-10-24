@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import FormControl from '@mui/material/FormControl';
@@ -8,6 +9,7 @@ import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
+import LoadAWSImage from '../components/common/LoadAWSImage';
 import { useAuth } from '../context/auth/auth';
 
 const RegisterPage = (): JSX.Element => {
@@ -17,10 +19,11 @@ const RegisterPage = (): JSX.Element => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [admin, setAdmin] = useState(false);
+    const [image, setImageUrl] = useState('');
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault();
-        register(firstName, lastName, email, password, admin);
+        register(firstName, lastName, email, password, admin, image);
     };
 
     return (
@@ -28,6 +31,10 @@ const RegisterPage = (): JSX.Element => {
             <Typography sx={{ marginBottom: '40px' }} variant="h1" fontSize={24} fontWeight={'bold'}>
                 Join
             </Typography>
+            <FormControl sx={{ width: '100%', marginBottom: '20px', display: 'flex', alignItems: 'center' }}>
+                <Avatar src={image.length ? image : '/broken-image.jpg'} sx={{ width: 75, height: 75, marginBottom: '10px' }} />
+                <LoadAWSImage setImageUrl={setImageUrl} />
+            </FormControl>
             <FormControl sx={{ width: '100%', marginBottom: '20px' }}>
                 <FormLabel sx={{ marginBottom: '10px' }} htmlFor="firstName">
                     First name
