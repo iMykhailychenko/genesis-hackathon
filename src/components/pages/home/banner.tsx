@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Filters from '../../filters/filters';
+import Filters from '../../filters/Filters';
 
 import css from './banner.module.scss';
 
