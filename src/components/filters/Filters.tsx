@@ -13,12 +13,15 @@ import TextField from '@mui/material/TextField';
 import { selectTheme } from '../layout/theme/theme';
 
 import css from './filters.module.scss';
+import useTrans from '../../hooks/trans.hook';
 
 const Filters = (): JSX.Element => {
     const [search, setSearch] = useState<string>();
     const [rating, setRating] = useState<number | null>(0);
     // const [price, setPrice] = useState<string>();
     const [place, setPlace] = useState<string>();
+
+    const trans = useTrans();
 
     const handleSearch = (e: { target: { value: string } }) => {
         setSearch(e.target.value);
@@ -32,13 +35,13 @@ const Filters = (): JSX.Element => {
     return (
         <>
             <div className={css.filters}>
-                <div className={css.filters_title}>Фільтрація</div>
+                <div className={css.filters_title}>{trans('filtration')}</div>
                 <div className={css.search}>
                     <TextField
                         value={search}
                         onChange={handleSearch}
                         id="outlined-basic"
-                        label="Поиск по имени"
+                        label={trans('search')}
                         variant="outlined"
                         sx={{ width: '100%' }}
                     />
@@ -47,7 +50,7 @@ const Filters = (): JSX.Element => {
                     <div className={css.filter_wrapper}>
                         <div className={css.rating}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Рейтинг закладу
+                                {trans('rating')}
                             </InputLabel>
                             <Rating
                                 name="simple-controlled"
@@ -59,7 +62,7 @@ const Filters = (): JSX.Element => {
                         </div>
                         <div className={css.price}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Середній чек
+                                {trans('avarage')}
                             </InputLabel>
                             <FormGroup>
                                 <FormControlLabel sx={{ height: '25px' }} control={<Checkbox size="small" />} label="$" />
@@ -72,14 +75,14 @@ const Filters = (): JSX.Element => {
                     <div className={css.filter_wrapper}>
                         <div className={css.animals}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Можна з тваринами
+                                {trans('animals')}
                             </InputLabel>
                             <Checkbox size="small" />
                         </div>
 
                         <div className={css.place_type}>
                             <InputLabel sx={{ marginBottom: '10px' }} id="demo-simple-select-label">
-                                Тип закладу
+                                {trans('place_type')}
                             </InputLabel>
                             <ThemeProvider theme={selectTheme}>
                                 <Select
