@@ -4,6 +4,7 @@ import axios from 'axios';
 import cookie from 'cookie';
 import Cookies from 'js-cookie';
 import router from 'next/router';
+import { IAuth } from '../../interfaces/auth';
 
 const AuthContext = createContext({});
 
@@ -22,12 +23,12 @@ export const getUser = async (ctx: any) => {
                 return { status: 'SIGNED_OUT', user: null };
             }
         })
-        .catch(error => {
+        .catch(() => {
             return { status: 'SIGNED_OUT', user: null };
         });
 };
 
-export const AuthProvider: React.FC<{ myAuth: any; children: JSX.Element[] | JSX.Element }> = props => {
+export const AuthProvider: React.FC<{ myAuth: IAuth; children: JSX.Element[] | JSX.Element }> = props => {
     const auth = props.myAuth || { status: 'SIGNED_OUT', user: null };
     const login = async (email: string, password: string) => {
         return await axios
