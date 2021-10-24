@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const THEME = createTheme({
+export const THEME = createTheme({
     palette: {
         primary: {
             light: '#5c5c5c',
@@ -29,4 +29,17 @@ const THEME = createTheme({
     },
 });
 
-export default THEME;
+export const selectTheme = createTheme({
+    components: {
+        MuiSelect: {
+            styleOverrides: {
+                icon: {
+                    color: 'black',
+                },
+                iconStandard: {
+                    color: 'black',
+                },
+            },
+        },
+    },
+});
