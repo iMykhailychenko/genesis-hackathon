@@ -6,6 +6,8 @@ import Rating from '@mui/material/Rating';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
+import './filters.module.scss';
+
 export default function Filters(): ReactElement {
     const [search, setSearch] = useState<string>();
     const [rating, setRating] = useState<number | null>(0);
