@@ -1,84 +1,52 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
-import cookie from 'cookie';
-import Cookies from 'js-cookie';
-import { NextPageContext } from 'next';
-import router from 'next/router';
 
-import { IAuth } from '../../interfaces/auth';
+import { useAppDispatch } from '../../hooks/redux.hook';
+import authInitialState from '../../state/entities/auth/auth.initial-state';
+import { IAuthState } from '../../state/entities/auth/auth.interface';
+import { logoutAction } from '../../state/entities/auth/auth.reducer';
+import { useAuthSelector } from '../../state/entities/auth/auth.selector';
+import { useProfileInfoSelector } from '../../state/entities/profile/profile.selector';
 
-const AuthContext = createContext({});
+export type AuthHook = [value: IAuthState | null, setAuth: (value: IAuthState | null) => void];
+export const Auth = createContext<AuthHook>([authInitialState, () => undefined]);
 
-export const getUser = async (
-    ctx: NextPageContext,
-): Promise<{ status: string; user: unknown } | { status: string; user: null }> => {
-    const token = cookie.parse(ctx?.req?.headers?.cookie || '').accessToken || Cookies.get('accessToken');
-
-    return await axios({
-        method: 'POST',
-        url: `${process.env.NEXT_PUBLIC_API_URL}/users/profile`,
-        headers: { Authorization: token ? `Bearer ${token}` : '' },
-    })
-        .then(response => {
-            if (response.data) {
-                return { status: 'SIGNED_IN', user: response.data };
-            } else {
-                return { status: 'SIGNED_OUT', user: null };
-            }
-        })
-        .catch(() => {
-            return { status: 'SIGNED_OUT', user: null };
-        });
-};
-
-interface Props {
-    myAuth: IAuth;
+interface IProps {
+    authServer?: IAuthState | null;
     children: JSX.Element[] | JSX.Element;
 }
 
-export const AuthProvider = (props: Props): JSX.Element => {
-    const auth = props.myAuth || { status: 'SIGNED_OUT', user: null };
-    const login = async (email: string, password: string) => {
-        return await axios
-            .get(`${process.env.NEXT_PUBLIC_API_URL}/users/login`, {
-                data: { email, password },
-            })
-            .then((res: any) => {
-                Cookies.set('accessToken', res.data.accessToken);
-                router.push('/');
-            })
-            .catch(error => {
-                console.error(error, 'Incorrect email or password entered.)');
-            });
-    };
-    const register = async (firstName: string, lastName: string, email: string, password: string) => {
-        return await axios({
-            method: 'post',
-            url: `${process.env.NEXT_PUBLIC_API_URL}/users`,
-            data: { firstName, lastName, email, password, role: ['user'] },
-        })
-            .then(() => {
-                router.push('/');
-                console.log('user registered');
-            })
-            .catch(error => {
-                console.error(error.message);
-            });
-    };
-    const logout = async () => {
-        return await axios
-            .get(`${process.env.NEXT_PUBLIC_API_URL}/logout`)
-            .then(() => {
-                router.push('/');
-                console.log('user logged out');
-            })
-            .catch(error => {
-                console.error(error.message);
-            });
-    };
-    return <AuthContext.Provider value={{ auth, logout, register, login }} {...props} />;
+const AuthProvider = ({ authServer = authInitialState, children }: IProps): JSX.Element => {
+    const dispatch = useAppDispatch();
+    const [value, setValue] = useState<IAuthState | null>(authInitialState);
+    const auth = useAuthSelector();
+    const profile = useProfileInfoSelector();
+
+    useEffect(() => {
+        if (process.browser) {
+            if (auth?.accessToken) {
+                setValue(auth);
+                axios.defaults.headers.common.Authorization = auth.accessToken.includes('Bearer')
+                    ? auth.accessToken
+                    : `Bearer ${auth.accessToken}`;
+            } else {
+                setValue(authInitialState);
+                dispatch(logoutAction());
+            }
+        } else {
+            setValue(authServer);
+        }
+    }, [auth, authServer, dispatch]);
+
+    useEffect(() => {
+        if (profile.status === 'error') {
+            setValue(authInitialState);
+            dispatch(logoutAction());
+        }
+    }, [dispatch, profile]);
+
+    return <Auth.Provider value={[value, setValue]}>{children}</Auth.Provider>;
 };
 
-export const useAuth: any = () => React.useContext(AuthContext);
-export const AuthConsumer = AuthContext.Consumer;
+export default AuthProvider;

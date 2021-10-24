@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Toolbar from '@mui/material/Toolbar';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { LANGUAGE_ENUM } from '../../../interfaces';
@@ -26,9 +27,11 @@ const Header = (): JSX.Element => {
     return (
         <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
             <Toolbar>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                    <img src="/images/icons_cafeteria.svg" alt="logo" />
-                </IconButton>
+                <Link href="/">
+                    <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                        <img src="/images/icons_cafeteria.svg" alt="logo" />
+                    </IconButton>
+                </Link>
 
                 <Box sx={{ flexGrow: 1 }} />
 
@@ -58,8 +61,12 @@ const Header = (): JSX.Element => {
                 </Button> */}
 
                 <ButtonGroup variant="contained">
-                    <Button>Login</Button>
-                    <Button>Join</Button>
+                    <Link href="/login">
+                        <Button>Login</Button>
+                    </Link>
+                    <Link href="/join">
+                        <Button>Join</Button>
+                    </Link>
                 </ButtonGroup>
             </Toolbar>
         </AppBar>
