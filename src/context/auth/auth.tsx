@@ -14,7 +14,7 @@ export const Auth = createContext<AuthHook>([authInitialState, () => undefined])
 
 interface IProps {
     authServer?: IAuthState | null;
-    children: JSX.Element[] | JSX.Element;
+    children: JSX.Element | JSX.Element[];
 }
 
 const AuthProvider = ({ authServer = authInitialState, children }: IProps): JSX.Element => {
@@ -26,13 +26,12 @@ const AuthProvider = ({ authServer = authInitialState, children }: IProps): JSX.
     useEffect(() => {
         if (process.browser) {
             if (auth?.accessToken) {
-                localStorage.setItem('token', auth.accessToken);
+                setValue(auth);
                 axios.defaults.headers.common.Authorization = auth.accessToken.includes('Bearer')
                     ? auth.accessToken
                     : `Bearer ${auth.accessToken}`;
             } else {
                 setValue(authInitialState);
-                dispatch(logoutAction());
             }
         } else {
             setValue(authServer);

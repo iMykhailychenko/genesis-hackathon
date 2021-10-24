@@ -23,6 +23,7 @@ import css from './header.module.scss';
 const Header = (): JSX.Element => {
     const history = useRouter();
     const [auth] = useAuth();
+    console.log(auth);
 
     const handleChange = (event: SelectChangeEvent<string>): void => {
         history.push(history.pathname, history.asPath, { locale: event.target.value, scroll: false });
