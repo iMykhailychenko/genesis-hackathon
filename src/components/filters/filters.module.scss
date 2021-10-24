@@ -164,18 +164,13 @@
     width: 30px;
     height: 30px;
     border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sort_list__item.direction span {
     display: none;
-}
-
-.sort_list__item label.up {
-    background-image: url('../../../public/images/arrow-up.svg');
-}
-
-.sort_list__item label.down {
-    background-image: url('../../../public/images/arrow-down.svg');
 }
 
 .sort_list__item input:checked + label {

@@ -1,5 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
@@ -83,7 +85,6 @@ const Filters = (): JSX.Element => {
                     </div>
                 </div>
             </div>
-
             <div className={css.sorting}>
                 <div className={css.sorting_title}>Сортировка по:</div>
                 <div className={css.sorting_content}>
@@ -104,12 +105,14 @@ const Filters = (): JSX.Element => {
                             <li className={clsx(css.sort_list__item, css.direction)}>
                                 <input id="input-sort-up" type="radio" name="direction" value="asc" />
                                 <label htmlFor="input-sort-up" className={css.up}>
+                                    <ArrowDropUpIcon sx={{ width: '30px', height: 'auto' }} />
                                     <span>по возрастанию</span>
                                 </label>
                             </li>
                             <li className={clsx(css.sort_list__item, css.direction)}>
                                 <input id="input-sort-down" type="radio" name="direction" value="desc" />
                                 <label htmlFor="input-sort-down" className={css.down}>
+                                    <ArrowDropDownIcon sx={{ width: '30px', height: 'auto' }} />
                                     <span>по убыванию</span>
                                 </label>
                             </li>
@@ -117,6 +120,7 @@ const Filters = (): JSX.Element => {
                     </div>
                 </div>
             </div>
+            xx
         </>
     );
 };
