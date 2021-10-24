@@ -1,7 +1,6 @@
-export interface PostProps {
+export interface IPost {
     id: number;
     image: string;
-    imageAlt: string;
     title: string;
     rating: number;
     rewies: number;
