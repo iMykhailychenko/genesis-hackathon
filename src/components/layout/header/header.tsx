@@ -10,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Toolbar from '@mui/material/Toolbar';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { LANGUAGE_ENUM } from '../../../interfaces';
@@ -54,12 +55,18 @@ const Header = (): JSX.Element => {
                 </IconButton>
 
                 {/* <Button color="inherit">
-                    <Avatar src="/broken-image.jpg" />
+                    <Link href="/profile">
+                        <Avatar src="/broken-image.jpg" />
+                    </Link>
                 </Button> */}
 
                 <ButtonGroup variant="contained">
-                    <Button>Login</Button>
-                    <Button>Join</Button>
+                    <Button>
+                        <Link href="/login">Login</Link>
+                    </Button>
+                    <Button>
+                        <Link href="/registration">Join</Link>
+                    </Button>
                 </ButtonGroup>
             </Toolbar>
         </AppBar>
