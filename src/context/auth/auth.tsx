@@ -3,7 +3,7 @@ import React, { createContext } from 'react';
 import axios from 'axios';
 import cookie from 'cookie';
 import Cookies from 'js-cookie';
-import { GetServerSidePropsContext } from 'next';
+import { NextPageContext } from 'next';
 import router from 'next/router';
 
 import { IAuth } from '../../interfaces/auth';
@@ -11,7 +11,7 @@ import { IAuth } from '../../interfaces/auth';
 const AuthContext = createContext({});
 
 export const getUser = async (
-    ctx: GetServerSidePropsContext,
+    ctx: NextPageContext,
 ): Promise<{ status: string; user: unknown } | { status: string; user: null }> => {
     const token = cookie.parse(ctx?.req?.headers?.cookie || '').accessToken || Cookies.get('accessToken');
 
