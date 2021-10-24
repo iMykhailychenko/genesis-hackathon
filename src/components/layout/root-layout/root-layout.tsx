@@ -4,7 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import THEME from '../theme/theme';
+import { THEME } from '../theme/theme';
 
 interface Props {
     children: JSX.Element;

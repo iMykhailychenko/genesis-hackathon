@@ -4,7 +4,7 @@
 
 .filters {
     position: relative;
-    width: 90%;
+    max-width: 852px;
     border: 1px solid rgba(0, 0, 0, 0.274);
     border-radius: 3px;
     margin: 20px auto;
@@ -12,9 +12,13 @@
     background-color: white;
 }
 
+.filter_wrapper {
+    margin: 20px 15px 0;
+}
+
 .filters_content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -97,6 +101,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 .price_text {
@@ -108,106 +113,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.sorting {
-    position: relative;
-    width: 90%;
-    border: 1px solid rgba(0, 0, 0, 0.274);
-    border-radius: 3px;
-    margin: 20px auto;
-    padding: 20px 60px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sorting_title {
-    font-size: 24px;
-}
-
-.sorting_content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.sort-list {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 0;
-    list-style: none;
-}
-
-.sort_list__item {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 18px;
-    margin: 0 50px 0 0;
-}
-
-.list__item input {
-    display: none;
-}
-
-.sort_list__item.direction {
-    margin: 0 0 0 10px;
-}
-
-.sort_list__item input {
-    display: none;
-}
-
-.sort_list__item label.down,
-.sort_list__item label.up {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ccc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sort_list__item.direction span {
-    display: none;
-}
-
-.sort_list__item input:checked + label {
-    color: black;
-    border-color: black;
-    border-radius: 2px;
-}
-
-.sort_list__item label {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 3px 10px;
-    border: 1px solid transparent;
-    -moz-transition: border 0.3s, color 0.3s;
-    -o-transition: border 0.3s, color 0.3s;
-    -webkit-transition: border 0.3s, color 0.3s;
-    transition: border 0.3s, color 0.3s;
-    background: no-repeat center center;
+    margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {
-    .filters_content {
-        justify-content: center;
-    }
+}
 
-    .search {
-        margin-bottom: 10px;
-        margin-right: 20px;
-    }
-
-    .rating {
-        margin-bottom: 10px;
+@media (max-width: 450px) {
+    .filter_wrapper {
         margin-right: 20px;
     }
 
     .price {
-        margin-bottom: 10px;
-        margin-right: 20px;
+        margin-bottom: 40px;
     }
 }

@@ -1,0 +1,26 @@
+.profile {
+    display: flex;
+    max-width: 500px;
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile_information_text {
+    margin-bottom: 10px;
+}
+
+.admin_block {
+    margin-top: 30px;
+}
+
+.admin_text {
+    margin: 30px;
+}
+
+@media (max-width: 455px) {
+    .profile {
+        justify-content: center;
+    }
+}

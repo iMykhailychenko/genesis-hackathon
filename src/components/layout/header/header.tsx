@@ -26,7 +26,14 @@ const Header = (): JSX.Element => {
     return (
         <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
             <Toolbar>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                <IconButton
+                    onClick={() => history.push('/')}
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    sx={{ mr: 2 }}
+                >
                     <img src="/images/icons_cafeteria.svg" alt="logo" />
                 </IconButton>
 
@@ -34,11 +41,11 @@ const Header = (): JSX.Element => {
 
                 <FormControl variant="standard">
                     <Select
-                        disableUnderline
                         className={css.select}
                         labelId="language"
                         value={history.locale}
                         onChange={handleChange}
+                        disableUnderline
                     >
                         <MenuItem sx={{ minWidth: 60, fontSize: '1.2rem' }} value={LANGUAGE_ENUM.UA}>
                             {LANGUAGE_ENUM.UA}
@@ -54,12 +61,14 @@ const Header = (): JSX.Element => {
                 </IconButton>
 
                 {/* <Button color="inherit">
-                    <Avatar src="/broken-image.jpg" />
+                    <Link href="/profile">
+                        <Avatar src="/broken-image.jpg" />
+                    </Link>
                 </Button> */}
 
                 <ButtonGroup variant="contained">
-                    <Button>Login</Button>
-                    <Button>Join</Button>
+                    <Button onClick={() => history.push('/login')}>Login</Button>
+                    <Button onClick={() => history.push('/registration')}>Join</Button>
                 </ButtonGroup>
             </Toolbar>
         </AppBar>

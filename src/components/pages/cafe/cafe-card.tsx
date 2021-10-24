@@ -1,17 +1,13 @@
 import React from 'react';
 
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box'
 import Container from '@mui/material/Container';
 
 import CafeCardImg from './components/cafe-image-card';
 import RatingCard from './components/rating-card';
 
 import {IPost} from '../../../interfaces/post';
+import Typography from '@mui/material/Typography';
 
 const CafeCard = ({...props}:IPost): JSX.Element => {
     return(
@@ -29,7 +25,7 @@ const CafeCard = ({...props}:IPost): JSX.Element => {
                     <RatingCard rating={props.rating} rewies={props.rewies}/>
             </Box>
         </Container>
-    )
+    );
 };
 
 export default CafeCard;
